@@ -84,7 +84,6 @@ navicons.forEach((icon) => {
   });
 });
 
-// ---------- THEME SYNC GLUE (non-invasive) ----------
 /*
   Purpose: persist the user's choice and resend it whenever the iframe loads a new page.
   This does NOT alter your existing functions or logic; it only listens/reads state
@@ -92,16 +91,15 @@ navicons.forEach((icon) => {
 */
 
 (function () {
-  // small helper to read current theme from your footer icon (keeps your logic intact)
+  // small helper to read current theme from your footer icon
   function readThemeFromFooterIcon() {
     const btnicon = document.querySelector(".footer-item i");
-    // you use fa-moon for dark; fa-lightbulb (or other) for light — same check as your code
+    // you use fa-moon for dark; fa-lightbulb (or other) for light
     return btnicon && btnicon.classList.contains("fa-moon") ? "dark" : "light";
   }
 
   // Persist theme so new pages know what to apply even after reloads/navigation
-  // We update localStorage whenever the user clicks (listen for clicks on the footer icon).
-  // This does not replace your functions; it only stores the user's selection.
+  //  update localStorage whenever the user clicks (listen for clicks on the footer icon).
   const footerIcon = document.querySelector(".footer-item i");
   if (footerIcon) {
     footerIcon.addEventListener("click", () => {
@@ -113,7 +111,7 @@ navicons.forEach((icon) => {
         try {
           iframe.contentWindow.postMessage({ theme }, "*");
         } catch (e) {}
-      }, 40); // 30-80ms is fine
+      }, 40);
     });
   }
 
@@ -145,9 +143,9 @@ navicons.forEach((icon) => {
     }, 60);
   });
 })();
-// ---------- end theme sync glue ----------
 
-// ---------- Restore theme on load (keeps your existing logic intact) ----------
+// Restore theme on load
+
 (function restoreThemeOnLoad() {
   // read previously saved theme (we used localStorage in the glue)
   const saved = localStorage.getItem("theme"); // "dark" or "light" or null
@@ -198,4 +196,3 @@ navicons.forEach((icon) => {
     }
   }, 80);
 })();
-// ---------- end restore ----------
