@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About-me</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="aboutmestyle.css" />
+  </head>
+  <body>
+    <section id="about">
+      <h2>About Me</h2>
+
+      <p class="about-text">
+        Hi! I’m <strong>Anuj KC</strong>, a passionate software engineer who
+        loves turning ideas into interactive and functional web applications. I
+        specialize in <strong>JavaScript, HTML, CSS</strong>, and frameworks
+        like <strong>React</strong>. Building responsive and user-friendly
+        interfaces is what excites me the most, and I enjoy learning new tools
+        and techniques to improve my craft.
+      </p>
+
+      <p class="about-text">
+        Over the past few years, I’ve worked on personal projects ranging from
+        <strong>portfolio websites</strong> to small <strong>web apps</strong>.
+        Each project has helped me sharpen my coding skills, experiment with new
+        technologies, and focus on writing clean, efficient code while providing
+        a great user experience.
+      </p>
+
+      <p class="about-text">
+        I completed my
+        <strong>SEE (Secondary Education Examination) in 2023</strong> with a
+        GPA of <strong>3.7</strong>. I also have experience with
+        <strong>Git and GitHub</strong> for version control and collaboration,
+        and I’ve participated in <strong>inter-school tech programs</strong> to
+        enhance my knowledge and gain practical experience in coding and
+        teamwork.
+      </p>
+
+      <p class="about-text">
+        I’m constantly driven by curiosity and the desire to create solutions
+        that make a difference. My goal is to build
+        <strong
+          >efficient, interactive, and visually appealing applications</strong
+        >
+        that not only work well but also delight users. Feel free to explore my
+        <a href="project.html">projects</a> or
+        <a href="emailme.html" target="_blank">get in touch</a> — I’m always
+        excited to collaborate, learn, and build something amazing!
+      </p>
+    </section>
+    <script>
+      // text ma popup animation aauxa
+      const paragraphs = document.querySelectorAll(".about-text");
+
+      function revealOnScroll() {
+        const triggerBottom = window.innerHeight * 0.9;
+
+        paragraphs.forEach((p) => {
+          const pTop = p.getBoundingClientRect().top;
+
+          if (pTop < triggerBottom) {
+            p.classList.add("visible");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+
+      // text change while changing into dark and light mode
+      const heading = document.querySelector("h2");
+      const links = document.querySelectorAll("a");
+      window.addEventListener("message", (el) => {
+        if (el.data.theme == "dark") {
+          document
+            .querySelectorAll("*")
+            .forEach((element) => (element.style.color = "#fff"));
+          heading.style.color = "#00c2ff";
+          links.forEach((element) => {
+            element.style.color = "blue";
+          });
+        } else {
+          document
+            .querySelectorAll("*")
+            .forEach((element) => (element.style.color = "#000"));
+          heading.style.color = "#00c2ff";
+          links.forEach((element) => {
+            element.style.color = "blue";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+h2 {
+  color: #00c2ff;
+  text-align: center;
+  margin: 40px auto;
+}
+form {
+  height: 80vh;
+  width: 80vh;
+  max-width: 80%;
+  font-size: 1.5em;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 25px;
+}
+
+#name,
+#email,
+#message,
+#subject {
+  height: 30px;
+  width: 15rem;
+  margin-left: 10px;
+}
+div {
+  padding: 10px;
+}
+#btn {
+  height: 40px;
+  width: 150px;
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+#btn:active {
+  transform: scale(0.95);
+}
+#btn:hover {
+  background-color: #00c2ff;
+}

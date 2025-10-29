@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="emailmestyle.css" />
+
+    <!-- EmailJS CDN -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "lc6VYpu9A6nki5Bio",
+        });
+      })();
+    </script>
+  </head>
+
+  <body>
+    <h2>Email</h2>
+
+    <form id="emailForm">
+      <div class="name">
+        Name : <input type="text" id="name" placeholder="Name" required />
+      </div>
+
+      <div class="email">
+        Email : <input type="email" id="email" placeholder="Email" required />
+      </div>
+
+      <div class="subject">
+        Subject :
+        <input type="text" id="subject" placeholder="Subject" required />
+      </div>
+
+      <div class="message">
+        Message :
+        <textarea id="message" placeholder="Message" required></textarea>
+      </div>
+
+      <button type="submit" id="btn">Send</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("emailForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let parms = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+          };
+
+          emailjs
+            .send("service_7u3m8fb", "template_fgqz69a", parms)
+            .then(() => {
+              alert("Email has been successfully sent!");
+              document.getElementById("emailForm").reset();
+            })
+            .catch((error) => {
+              alert("Failed to send email.");
+            });
+        });
+    </script>
+  </body>
+</html>
