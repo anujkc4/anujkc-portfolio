@@ -119,7 +119,7 @@ h3 {
 }
 
 /* Tablets 768px - 991px */
-@media (max-width: 991px) and (min-width: 768px) {
+/* @media (max-width: 991px) and (min-width: 768px) {
   .groupone,
   .grouptwo {
     flex-wrap: wrap;
@@ -136,9 +136,9 @@ h3 {
     width: 45%;
     height: 280px;
   }
-}
+} */
 
-/* Small devices */
+/* mobile devices */
 @media (max-width: 767px) {
   .groupone,
   .grouptwo {

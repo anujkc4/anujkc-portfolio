@@ -76,7 +76,7 @@ nav > .fa-regular {
 }
 
 /* Medium screens: tablets */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .left {
     width: 7%;
   }
@@ -91,7 +91,7 @@ nav > .fa-regular {
   .container::before {
     left: 7%;
   }
-}
+} */
 
 /* Small screens: mobile portrait */
 @media (max-width: 768px) {
@@ -142,7 +142,7 @@ nav > .fa-regular {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   nav > .fa-solid,
   nav > .fa-regular {
     font-size: 1rem;
@@ -151,4 +151,4 @@ nav > .fa-regular {
   .right {
     height: calc(100vh - 60px);
   }
-}
+} */

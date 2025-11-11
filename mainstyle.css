@@ -145,7 +145,7 @@
 }
 
 /* Laptops and pc 992px - 1199px */
-@media (max-width: 1199px) and (min-width: 992px) {
+/* @media (max-width: 1199px) and (min-width: 992px) {
   #switch-text {
     font-size: 60px;
   }
@@ -170,10 +170,10 @@
     height: 40px;
     min-width: 150px;
   }
-}
+} */
 
 /* Tablets 768px - 991px */
-@media (max-width: 991px) and (min-width: 768px) {
+/* @media (max-width: 991px) and (min-width: 768px) {
   .content {
     flex-direction: column;
     align-items: center;
@@ -231,7 +231,7 @@
     font-size: 1.2rem;
     justify-content: center;
   }
-}
+} */
 
 /* Mobile / Small screens <768px */
 @media (max-width: 767px) {

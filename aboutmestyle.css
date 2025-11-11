@@ -44,17 +44,17 @@
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #about {
     width: 90%;
   }
   #about h2 {
     font-size: 2rem;
   }
-}
+} */
 
 /* Tablets */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   #about {
     width: 90%;
   }
@@ -66,7 +66,7 @@
   .about-text {
     font-size: 1rem;
   }
-}
+} */
 
 /* Mobile phones */
 @media (max-width: 480px) {
